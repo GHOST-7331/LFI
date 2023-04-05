@@ -1,0 +1,8 @@
+LFI: stands for Local File Inclusion, which is a type of web application vulnerability that allows an attacker 
+to include local files on a web server through a web application.
+  
+The URL "http://test.com/file/example.php?file=index.php" is not susceptible to output disclosure due to the presence of server-side input filtering mechanisms.
+
+By utilizing the PHP wrapper filter and constructing a URL such as "http://test.com/file/example.php?page=php://filter/convert.base64-encode/resource=index.php", 
+it is possible to circumvent the server-side filtering mechanism. The resulting output from this request will be in base64-encoded form, which will need to be 
+decoded, but the filtering mechanism has been successfully bypassed.
